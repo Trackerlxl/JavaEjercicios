@@ -1,0 +1,91 @@
+package Ejerciciosjava;
+import java.util.Scanner;
+public class Ejercicio13 {
+
+	public static void main(String[] args) {
+		
+
+		 String genero;
+	        int numeroBolita;
+	        String premio;
+
+	        
+	        Scanner scanner = new Scanner(System.in);
+
+	        
+	        System.out.print("Ingrese su género (hombre/mujer): ");
+	        genero = scanner.nextLine().toLowerCase(); 
+
+	        
+	        if (!genero.equals("hombre") && !genero.equals("mujer")) {
+	            System.out.println("Género no válido. El programa se cerrará.");
+	            scanner.close();
+	            return; 
+	        }
+
+	        
+	        System.out.print("Ingrese el número de la bolita (1 a 5): ");
+	        numeroBolita = scanner.nextInt();
+
+	        
+	        if (numeroBolita < 1 || numeroBolita > 5) {
+	            System.out.println("Número de bolita no válido. El programa se cerrará.");
+	            scanner.close();
+	            return; // Termina la ejecución si el número no es válido
+	        }
+
+	        
+	        if (genero.equals("hombre")) {
+	            switch (numeroBolita) {
+	                case 1:
+	                    premio = "Desodorante";
+	                    break;
+	                case 2:
+	                    premio = "Six-Pack de cerveza";
+	                    break;
+	                case 3:
+	                    premio = "Camiseta";
+	                    break;
+	                case 4:
+	                    premio = "Pantaloneta";
+	                    break;
+	                case 5:
+	                    premio = "Sudadera";
+	                    break;
+	                default:
+	                    premio = "Premio no disponible";
+	                    break;
+	            }
+	        } else {
+	            switch (numeroBolita) {
+	                case 1:
+	                    premio = "Loción";
+	                    break;
+	                case 2:
+	                    premio = "Bikini";
+	                    break;
+	                case 3:
+	                    premio = "Crema para la cara";
+	                    break;
+	                case 4:
+	                    premio = "Plancha para el cabello";
+	                    break;
+	                case 5:
+	                    premio = "Esmalte de uñas";
+	                    break;
+	                default:
+	                    premio = "Premio no disponible";
+	                    break;
+	            }
+	        }
+
+	        
+	        System.out.println("¡Felicidades! Tu premio es: " + premio);
+
+	        
+	        scanner.close();
+		
+		
+	}
+
+}
